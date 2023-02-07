@@ -1,9 +1,17 @@
 <html>
-  <head>
-    <title>The Gossip Project</title>
-  </head>
-  <body>
-    <h1>Mon super site de gossip, depuis le dossier views !</h1>
-    <a href="/gossips/new/">le texte du lien</a>
-    </body>
+<head>
+    <title>My blog</title>
+</head>
+<body>
+    <h1>Awesome, just rackup!!</h1>
+    <button><a href="/articles/new">New</a></button>
+    <% articles.each_with_index do |article, index| %>
+        <p>
+          <%= article.author %><br/>
+          <%= article.content %><br/>
+          <button><a href="/articles/<%=index + 1%>">Show</a></button>
+          <button><a href="/articles/<%=index + 1%>/edit/">Update</a></button>
+        </p>
+      <% end %>
+</body>
 </html>
